@@ -10,7 +10,7 @@ import Book from './models/Book.js';
 import Author from './models/Author.js';
 
 const app = express();
-const port = 3000;
+const port = 3000; // Puerto cambiado a 3000
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -57,6 +57,16 @@ app.post('/users/login', async (req, res) => {
         res.send({ user, token });
     } catch (error) {
         res.status(400).send({ error: 'No se pudo iniciar sesión' });
+    }
+});
+
+// Ruta para obtener todos los usuarios
+app.get('/users', async (req, res) => {
+    try {
+        const users = await User.find();
+        res.status(200).send(users);
+    } catch (error) {
+        res.status(500).send(error);
     }
 });
 
@@ -124,15 +134,6 @@ app.post('/authors', auth, async (req, res) => {
         res.status(201).send(author);
     } catch (error) {
         res.status(400).send(error);
-    }
-});
-
-app.get('/authors', async (req, res) => {
-    try {
-        const authors = await Author.find();
-        res.status(200).send(authors);
-    } catch (error) {
-        res.status(500).send(error);
     }
 });
 

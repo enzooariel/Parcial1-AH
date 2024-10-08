@@ -1,0 +1,94 @@
+# API Documentation
+
+## Usuarios
+
+### 1. Crear un Usuario
+
+- **Método**: `POST`
+- **URL**: `http://localhost:3000/users`
+- **Cuerpo**:
+  ```json
+  {
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "password": "password123"
+  }
+
+  2. Iniciar Sesión
+Método: POST
+URL: http://localhost:3000/users/login
+Cuerpo:
+{
+  "email": "john.doe@example.com",
+  "password": "password123"
+}
+
+3. Obtener Todos los Usuarios
+Método: GET
+URL: http://localhost:3000/users
+
+##LIBROS
+Método: POST
+URL: http://localhost:3000/books
+Cuerpo:
+
+{
+  "title": "El Quijote",
+  "author": "Miguel de Cervantes",
+  "publishedDate": "1605-01-16"
+}
+2. Obtener Todos los Libros
+Método: GET
+URL: http://localhost:3000/books
+3. Obtener un Libro por ID
+Método: GET
+URL: http://localhost:3000/books/<id>
+Nota: Reemplaza <id> con el ID del libro que deseas obtener.
+4. Actualizar un Libro por ID
+Método: PATCH
+URL: http://localhost:3000/books/<id>
+Cuerpo:
+{
+  "title": "Nuevo Título",
+  "author": "Nuevo Autor",
+  "publishedDate": "2023-01-01"
+}
+Nota: Reemplaza <id> con el ID del libro que deseas actualizar. Puedes actualizar uno o más campos.
+5. Eliminar un Libro por ID
+Método: DELETE
+URL: http://localhost:3000/books/<id>
+Nota: Reemplaza <id> con el ID del libro que deseas eliminar.
+Autores
+## Crear un Autor
+Método: POST
+URL: http://localhost:3000/authors
+Cuerpo:
+{
+  "name": "Gabriel García Márquez",
+  "birthDate": "1927-03-06"
+}
+2. Obtener Todos los Autores
+Método: GET
+URL: http://localhost:3000/authors
+3. Buscar Autores por Nombre
+Método: GET
+URL: http://localhost:3000/authors/search?name=<nombre>
+Nota: Reemplaza <nombre> con el nombre del autor que deseas buscar.
+4. Obtener un Autor por ID
+Método: GET
+URL: http://localhost:3000/authors/<id>
+Nota: Reemplaza <id> con el ID del autor que deseas obtener.
+5. Actualizar un Autor por ID
+Método: PATCH
+URL: http://localhost:3000/authors/<id>
+Cuerpo:
+{
+  "name": "Nuevo Nombre",
+  "birthDate": "2023-01-01"
+}
+Nota: Reemplaza <id> con el ID del autor que deseas actualizar. Puedes actualizar uno o más campos.
+6. Eliminar un Autor por ID
+Método: DELETE
+URL: http://localhost:3000/authors/<id>
+Nota: Reemplaza <id> con el ID del autor que deseas eliminar.
+
